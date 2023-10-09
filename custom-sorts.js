@@ -27,6 +27,7 @@ function oddEvenSort(arr) {
     } else {
       return a - b;
     }
+
   });
 
   // let evenArray = [];
@@ -45,7 +46,18 @@ function oddEvenSort(arr) {
 }
 
 function validAnagrams(s, t) {
-  // Your code here
+
+  const sArr = s
+    .split('')
+    .sort()
+    .join('');
+
+  const tArr = t
+    .split('')
+    .sort()
+    .join('');
+
+  return sArr === tArr;
 }
 
 function reverseBaseSort(arr) {
