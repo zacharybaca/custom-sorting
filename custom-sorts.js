@@ -15,16 +15,20 @@ function ageSort(users) {
 
 function oddEvenSort(arr) {
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 !== 0 && arr[i - 1] % 2 === 0) {
-      [arr[i - 1], arr[i]] = [arr[i], arr[i - 1]];
-      console.log('Arr: ', arr);
-    }
+  return arr.sort(function (a, b) {
 
-  }
-  arr.sort(function (a,b) {
-    
-  })
+    const isAEven = a % 2 === 0;
+    const isBEven = b % 2 === 0;
+
+    if (isAEven && !isBEven) {
+      return 1;
+    } else if (!isAEven && isBEven) {
+      return -1;
+    } else {
+      return a - b;
+    }
+  });
+
   // let evenArray = [];
   // let oddArray = [];
 
@@ -40,7 +44,6 @@ function oddEvenSort(arr) {
   // return newArr;
 }
 
-console.log(oddEvenSort([5, 4, 7, 2, 9, 8, 1, 6, 3]))
 function validAnagrams(s, t) {
   // Your code here
 }
