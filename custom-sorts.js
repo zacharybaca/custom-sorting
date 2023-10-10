@@ -61,8 +61,27 @@ function validAnagrams(s, t) {
 }
 
 function reverseBaseSort(arr) {
-  // Your code here
+
+  return arr.sort(function (a, b) {
+
+    if (a.length === b.length) {
+      const greaterNum = (Number(a) > Number(b))
+      if (greaterNum) return -1
+      else return 1
+    }
+    return b - a;
+  })
+
 }
+
+
+const arr1 = [11, 1, 101, 0, 10, 100];
+const arr2 = [1, 45, 164, 6, 31, 90, 671];
+
+console.log(reverseBaseSort(arr1));      // => [100, 101, 10, 11, 0, 1]
+console.log(reverseBaseSort(arr2));      // => [164, 671, 31, 45, 90, 1, 6]
+
+
 
 function frequencySort(arr) {
   // Your code here
